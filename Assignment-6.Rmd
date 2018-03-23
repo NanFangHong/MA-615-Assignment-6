@@ -11,7 +11,40 @@ library(tidyverse)
 library(ggmap)
 ```
 
-## Bude Roadmap and Watercolor map
+# Introduction to places 
+
+We are planing a luxury and enjoyful trip to England Bude, a town that is well-known as a beach resort.
+
+## North Cornwall Cricket Club 
+```{r, echo=FALSE}
+knitr::include_graphics(path = 'http://c7.alamy.com/comp/EYBN67/wicket-covers-at-bude-cricket-club-north-cornwall-EYBN67.jpg')
+```
+
+Bude North Cornwall Cricket Club is situated on the clifftops at Bude. It is quite simply one of the most spectacular cricketing locations in the world with the Atlantic coast as its backdrop. 
+
+##Crooklets Beach
+```{r, echo=FALSE}
+knitr::include_graphics(path = 'https://www.cornwall-beaches.co.uk/public/photos/crooklets.jpg')
+```
+The small beach of Crooklets ajoins Summerleaze and Northcott Mouth at low tide forming a larger bay. The sandy beach is bordered to the north by Wrangle point and seperated from Summerleaze beach to the south by a rocky outcrop.
+
+##Summerleaze Beach
+```{r,echo=FALSE}
+knitr::include_graphics(path = 'https://www.visitcornwall.com/sites/default/files/styles/product_image_breakpoints_theme_visitcornwall2_tablet_1_5x/public/Summerleaze%20Beach.jpg?itok=idqvGBEi&timestamp=1319809738')
+```
+Located within easy walking distance of Bude town centre Summerleaze is a popular beach. However, the extensive sands in every direction mean at anything except high tide it is unlikely to feel crowded.
+Summerleaze is also an unusually interesting beach with a large breakwater complete with tower protecting a small harbour and the mouth of the Bude canal with its massive lock gates. On the opposite side of the beach there's a sea-water bathing pool making for safe bathing whatever the conditions. Backing onto the beach are grassy downs and the River Neet.
+
+## The Barrel at Bude
+```{r, echo=FALSE}
+knitr::include_graphics(path = 'http://z9n7wj6e8r337cq41ifpu1gu.wpengine.netdna-cdn.com/wp-content/uploads/2017/11/barreldowr1117a.jpg')
+```
+
+The Barrel at Bude is the second micropub to open in Cornwall and is the first in the north of the county. Its premises is in one of the oldest cottages and at the very heart in this popular North Cornwall seaside town. After residential use it became a retail shop selling first cloth remnants, a fancy dress shop then finally a household bargains store before planning permission was granted for a change of use. 
+
+
+
+# Bude Roadmap and Watercolor map
 
 ```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------
@@ -28,7 +61,7 @@ ggmap(map_Bude_watercolormap, extent = 'device')
 ```
 
 
-## Cricket ground and surfing beaches
+# Cricket ground and surfing beaches
 
 ```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------------------------------------
@@ -55,7 +88,7 @@ ggmap(map_Bude_watercolormap, extent = 'device') + geom_point(aes(x = my_lon, y 
 ```
 
 
-## To a nearby pub
+# To a nearby pub 'The Barrel at Bude'
 
 ```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ------------------------------------------------
@@ -85,7 +118,7 @@ ggmap(map_Bude_roadmap, extent = 'device') + geom_point(aes(x = my_lon, y = my_l
 ```
 
 
-## Merged by briannakincaid
+# Merged by briannakincaid
 
 ```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------------------
