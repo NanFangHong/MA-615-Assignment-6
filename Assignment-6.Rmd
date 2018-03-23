@@ -1,7 +1,19 @@
+---
+title: "Assignment-6"
+author: "Nanfang Hong"
+date: "3/23/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggmap)
+```
 
+## Bude Roadmap and Watercolor map
 
+```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------
 # Bude Roadmap and Watercolor map |
 # ---------------------------------
@@ -13,7 +25,12 @@ ggmap(map_Bude_roadmap, extent = 'device')
 # watercolor map
 map_Bude_watercolormap <- get_map(location = c(lon = -4.54, lat = 50.826), zoom = 14, maptype = 'watercolor', source = 'google')
 ggmap(map_Bude_watercolormap, extent = 'device')
+```
 
+
+## Cricket ground and surfing beaches
+
+```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------------------------------------
 # One cricket court and two surfing beaches marked on both maps |
 # ---------------------------------------------------------------
@@ -35,7 +52,12 @@ ggmap(map_Bude_roadmap, extent = 'device') + geom_point(aes(x = my_lon, y = my_l
 # watercolor map with markers
 ggmap(map_Bude_watercolormap, extent = 'device') + geom_point(aes(x = my_lon, y = my_lat), data = my_place) + geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place)
 
+```
 
+
+## To a nearby pub
+
+```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ------------------------------------------------
 # Find a pub and mark the route to cricket court |
 # ------------------------------------------------
@@ -60,9 +82,12 @@ ggmap(map_Bude_roadmap, extent = 'device') + geom_point(aes(x = my_lon, y = my_l
     aes(x = lon, y = lat),  colour = "blue", size = 1,
     data = route_df, lineend = "round"
   )
+```
 
 
+## Merged by briannakincaid
 
+```{r , fig.width=3.2, echo=FALSE, message=FALSE, warning=FALSE}
 # ---------------------------------------------
 # Adding Hotels 
 # ---------------------------------------------
@@ -79,16 +104,21 @@ edgecumbe <- geocode("Edgecumbe Hotel, 19 Summerleaze Cres, Bude EX23 8HJ, UK")
 ggmap(map_Bude_roadmap) + 
   geom_point(aes(x = my_lon, y = my_lat), data = my_place) + 
   geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
-  geom_point(aes(x = edgecumbe$lon, y = edgecumbe$lat)) +
-  geom_text(aes(x = edgecumbe$lon, y = edgecumbe$lat, label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
-  geom_point(aes(x = tommyjacks$lon, y = tommyjacks$lat)) +
-  geom_text(aes(x = tommyjacks$lon, y = tommyjacks$lat, label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
+  geom_point(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat))) +
+  geom_text(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat), label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
+  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) #+
+  geom_text(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat), label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
+
 
 # watercolor map 
 ggmap(map_Bude_watercolormap) + 
   geom_point(aes(x = my_lon, y = my_lat), data = my_place) + 
   geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
-  geom_point(aes(x = edgecumbe$lon, y = edgecumbe$lat)) +
-  geom_text(aes(x = edgecumbe$lon, y = edgecumbe$lat, label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
-  geom_point(aes(x = tommyjacks$lon, y = tommyjacks$lat)) +
-  geom_text(aes(x = tommyjacks$lon, y = tommyjacks$lat, label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
+  geom_point(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat))) +
+  geom_text(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat), label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
+  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) #+
+  geom_text(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat), label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
+
+```
+
+
