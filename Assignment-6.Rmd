@@ -139,7 +139,7 @@ ggmap(map_Bude_roadmap) +
   geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
   geom_point(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat))) +
   geom_text(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat), label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
-  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) #+
+  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) +
   geom_text(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat), label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
 
 
@@ -149,7 +149,7 @@ ggmap(map_Bude_watercolormap) +
   geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
   geom_point(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat))) +
   geom_text(aes(x = as.numeric(edgecumbe$lon), y = as.numeric(edgecumbe$lat), label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
-  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) #+
+  geom_point(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat))) +
   geom_text(aes(x = as.numeric(tommyjacks$lon), y = as.numeric(tommyjacks$lat), label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
 
 ```
