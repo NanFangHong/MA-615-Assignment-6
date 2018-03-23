@@ -63,6 +63,32 @@ ggmap(map_Bude_roadmap, extent = 'device') + geom_point(aes(x = my_lon, y = my_l
 
 
 
+# ---------------------------------------------
+# Adding Hotels 
+# ---------------------------------------------
 
+# Tommy Jacks Beach Hotel
+tommyjacks <- geocode("Crooklets Beach Cafe, Crooklets, Bude EX23 8NF, UK")
 
+# Edgcumbe Hotel
+edgecumbe <- geocode("Edgecumbe Hotel, 19 Summerleaze Cres, Bude EX23 8HJ, UK")
 
+#Add these hotels to maps of Bude
+
+#road map
+ggmap(map_Bude_roadmap) + 
+  geom_point(aes(x = my_lon, y = my_lat), data = my_place) + 
+  geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
+  geom_point(aes(x = edgecumbe$lon, y = edgecumbe$lat)) +
+  geom_text(aes(x = edgecumbe$lon, y = edgecumbe$lat, label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
+  geom_point(aes(x = tommyjacks$lon, y = tommyjacks$lat)) +
+  geom_text(aes(x = tommyjacks$lon, y = tommyjacks$lat, label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
+
+# watercolor map 
+ggmap(map_Bude_watercolormap) + 
+  geom_point(aes(x = my_lon, y = my_lat), data = my_place) + 
+  geom_text(aes(x = my_lon, y = my_lat, label = my_placename), hjust = - 0.1, data = my_place) +
+  geom_point(aes(x = edgecumbe$lon, y = edgecumbe$lat)) +
+  geom_text(aes(x = edgecumbe$lon, y = edgecumbe$lat, label = "Edgecumbe Hotel", hjust=1, vjust=1)) +
+  geom_point(aes(x = tommyjacks$lon, y = tommyjacks$lat)) +
+  geom_text(aes(x = tommyjacks$lon, y = tommyjacks$lat, label = "Tommy Jacks Beach Hotel", hjust=1, vjust=1))
